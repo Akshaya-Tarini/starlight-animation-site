@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Simple Webpage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <style>
+        body {
+            background-image: url(bg.png);
+          background-repeat: no-repeat;
+           background-size: 100%;
+           background-color:#dfd6cb;
+        }
+        h1{
+            font-size: 65px;
+            color: rgb(0, 0, 0);
+        }
+        h3{
+           font-size: 24px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .button {
+            position: center;
+            background-color:#977f7d;
+            padding: 15px 32px;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+        }
+        .button:hover{
+            background-color: #c2c9c6;
+            color: white;
+            border: #9cb4a9;
+        }
+        .ul{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+        #submit:hover{
+            background-color: #c2c9c6;
+            color: white;
+        }
+        a {
+          text-decoration: none;
+          color: white;
+          }
+        header img {
+             width:200px; 
+              height: auto; 
+         }
+         #submit {
+         background-color: #977f7d;
+         color: white;
+         text-align: center;
+         
+         }
+         .error {
+        color: red;
+        font-size: 0.9em;
+         }
+         #details {
+         border: 2px solid black;
+         width: 350px;
+         margin: 20px auto;
+         padding: 10px;
+         background-color: whitesmoke;
+        }
+        .image-container{
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .image-container img{
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        </style>
+    <body >
+        <header ><img src="header.png"></header>  
+        <h1 style="margin-top: -5%;"><center>Dive into the world of animation​</center></h1>    
+        <h2><center>Want to learn about animation But don't know where to start ?</center></h2> 
+        <center><h2>Don't worry we got you!</h2></center>
+      <center>  <button class="button"><a href="https://www.bloopanimation.com/animation-for-beginners/">Get Started</a> </button></center>
+        <br>
+      <center><img width="879px" height="513px" src="img.png"></center>  
+      <br>
+      <br>
+        <div> 
+      <center> <iframe width="790px" height="413px" src="bg.mp4" title="How to make animated videos [Tutorial for beginners]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center> 
+        </div>
+        <h3>WHY CHOOSE OUR WEBSITE</h3>
+        <ul class="ul">
+            <li type="circle">We offer a unique blend of cutting-edge technology, unparalleled artistry, and exceptional customer service.
+             </li>
+            <li type="circle">We provide a comprehensive platform that caters to both novice and professional animators, 
+            offering a vast library of tools, tutorials, and community support.
+            </li>
+            <li type="circle">
+                Our commitment to innovation ensures you always have access to the latest trends and techniques,
+                while our focus on quality guarantees your animations will captivate audiences and leave a lasting impression.
+            </li>
+        </ul>
+        <img src="rytend.png" style="width: 178px; margin-bottom: 10%; margin-left: 85%;">
+        <img src="lftend.png" style="width: 178px; height: 280px; margin-bottom: -20%; margin-left: 0%;">
+        <h3 style="margin-top: -22%;">OUR MOTIVE</h3>
+     <p class="ul">
+            To make it available for every person who like and loves 
+        <ul class="ul">
+             <li type="circle">
+                    Animating
+            </li>
+            <li type="circle">
+                     Designing
+            </li>
+            <li type="circle">
+                     Drawing
+            </li>
+        </ul> 
+     </p>
+    <p class="ul">
+        Anywhere , At anytime .
+    </p>  
+        <h3 >JOIN OUR COMMMUNITY </h3>
+        <h2>Interact with millions of user accross world.</h2>
+        <div style="border: 2px solid black; width: 400px; margin: 0 auto;padding: 15px; background-color: whitesmoke;">
+        <form id="contactForm" >
+            <label for="name"><b>Name</b></label><br>
+            <input type="text" placeholder="Enter Name" id="name" required><br> 
+            <span class="error" id="nameError"></span> 
+          <label for="email"><b>Email</b> </label><br>
+          <input type="text" placeholder="Enter Email" id="email" required><br>
+          <span class="error" id="emailError"></span>
+          <label for="num" ><b>Mobile Number</b></label><br>
+          <input type="text" placeholder="Enter Mobile Number" id="num" required><br>
+          <span class="error" id="numberError"></span>
+          <label for="address"><b>Message:</b></label><br>
+          <textarea id="address" rows="4"></textarea>
+         <span class="error" id="addressError"></span>
+          <br>
+          <button  type="submit"  id="submit" >Submit</button>
+        </form>
+        <div id="details" style="display: none;">
+            <h3 >Form details </h3>
+            <p id="displayName"></p>
+            <p id="displayEmail"></p>
+            <p id="displayNumber"></p>
+            <p id="displayAddress"></p>
+        </div>
+        <script>
+            document.getElementById('contactForm').addEventListener('submit',
+                function(event){
+                    event.preventDefault();
+                    let isValid = true;
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const number = document.getElementById('num').value;
+                    const address = document.getElementById('address').value;
+
+                    const nameError = document.getElementById('nameError');
+                    const emailError = document.getElementById('emailError');
+                    const numberError = document.getElementById('numberError');
+                    const addressError = document.getElementById('addressError');
+
+                    nameError.textContent = '';
+                    emailError.textContent = '';
+                    numberError.textContent = '';
+                    addressError.textContent = '';
+
+                    if (name.trim() === '') {
+                   nameError.textContent = 'Name is required';
+                 isValid = false;
+                }
+                   if (email.trim() === '') {
+                   emailError.textContent = 'Email is required';
+                   isValid = false;
+                   } else {
+                  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                    emailError.textContent = 'Invalid email address';
+                    isValid = false;
+                  }
+                }
+                   if (number.trim() === '') {
+                   numberError.textContent = 'Mobile number is required';
+                   isValid = false;
+                }
+                   if (address.trim() === '') {
+                   addressError.textContent = 'Message is required';
+                   isValid = false;
+                }
+                if (isValid) {
+                document.getElementById('displayName').textContent = 'Name: ' + name;
+                 document.getElementById('displayEmail').textContent = 'Email:'  + email;
+                document.getElementById('displayNumber').textContent ='Number: '  + number;
+                document.getElementById('displayAddress').textContent = 'Message: ' + address;
+                 document.getElementById('details').style.display = 'block';
+                }
+                });
+            </script>
+    </body>
+</html>
+
+   
